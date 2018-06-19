@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>查詢病狀</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script> 
+		<script src="js/init.js"></script>
+		<script>
+		$(function(){
+		
+        $('#pic1').click(function(){
+        $('html,body').animate({scrollTop:$('#pic').offset().top},800);});
+		
+		$('#pic2').click(function(){
+        $('html,body').animate({scrollTop:$('#pic').offset().top},800);});
+		
+		$('#pic3').click(function(){
+        $('html,body').animate({scrollTop:$('#pic').offset().top},800);});
+		
+		$('#pic4').click(function(){
+        $('html,body').animate({scrollTop:$('#pic').offset().top},800);});
+		
+		$('#pic5').click(function(){
+        $('html,body').animate({scrollTop:$('#pic').offset().top},800);});
+		
+		$('#pic6').click(function(){
+        $('html,body').animate({scrollTop:$('#pic').offset().top},800);});
+		
+		$('#pic7').click(function(){
+        $('html,body').animate({scrollTop:$('#pic').offset().top},800);});
+		
+		$('#pic8').click(function(){
+        $('html,body').animate({scrollTop:$('#pic').offset().top},800);});
+		});
+		<!-- disease[0.冒冷汗, 1.鼻子癢, 2.熊貓眼, 3.鼻塞, 4.呼吸有咻咻聲, 5.皮膚癢, 6.蕁麻疹, 7.失眠, 8.注意力下降, 9.疲倦無力, 10.情緒長期低落, 11.哈欠連連, 12.牙齒鬆動, 13.指甲軟化, 14.體重下降, 15.身高縮短, 16.站立不穩, 17.出現黑矇, 18.手臂無力, 19.短暫性視線模糊, 20.關節疼痛, 21.關節腫脹, 22.偏側麻癱, 23.暈眩, 24.心悸, 25.咳嗽、咳痰, 26.聲音嘶啞, 27.頭痛, 28.耳鳴, 29.頸部痠痛, 30.胸腹肌肉疼痛, 31.胸緊迫感/胸悶, 32.噁心, 33.抽搐, 34.昏迷, 35.喘鳴, 36.呼吸困難, 37.無法平臥, 38.咳血, 39.下肢水腫, 40.胸痛, 41.嗜睡, 42.瞼黃疣, 43.心絞痛, 44.腿部抽筋, 45.產生黑斑]-->
+		var diseasechi = ["冒冷汗", "鼻子癢", "熊貓眼", "鼻塞", "呼吸有咻咻聲", "皮膚癢", "蕁麻疹", "失眠", "注意力下降", "疲倦無力", "情緒長期低落", "哈欠連連", "牙齒鬆動", "指甲軟化", "體重下降", "身高縮短", "站立不穩", "出現黑矇", "手臂無力", "短暫性視線模糊", "關節疼痛", "關節腫脹", "偏側麻癱", "暈眩", "心悸", "咳嗽、咳痰", "聲音嘶啞", "頭痛", "耳鳴", "頸部痠痛", "胸腹肌肉疼痛", "胸緊迫感/胸悶", "噁心", "抽搐", "昏迷", "喘鳴", "呼吸困難", "無法平臥", "咳血", "下肢水腫", "胸痛", "嗜睡", "瞼黃疣", "心絞痛", "腿部抽筋", "產生黑斑"];
+		var disease = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+		var test = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+		var z;
+		function printhead()
+		{
+			
+				 document.getElementById("word").innerHTML = 
+				 "<a class='button big1'style='margin-bottom:15px' onclick = 'disease[1] = 1;printrecord();'>鼻子癢</a><br><a class='button big1'style='margin-bottom:15px' onclick = 'disease[2] = 1;printrecord();'>熊貓眼</a><br><a class='button big1'style='margin-bottom:15px' onclick = 'disease[3] = 1;printrecord();'>鼻塞</a><br><a class='button big1'style='margin-bottom:15px' onclick = 'disease[4] = 1;printrecord();'>呼吸咻咻聲</a><br><a class='button big1'style='margin-bottom:15px' onclick = 'disease[11] = 1;printrecord();'>哈欠連連</a><br><a class='button big1'style='margin-bottom:15px' onclick = 'disease[12] = 1;printrecord();'>牙齒鬆動</a><br><a class='button big1'style='margin-bottom:15px' onclick = 'disease[17] = 1;printrecord();'>出現黑矇</a><br><a class='button big1'style='margin-bottom:15px' onclick = 'disease[19] = 1;printrecord();'>短暫性視線模糊</a><br><a class='button big1'style='margin-bottom:15px' onclick = 'disease[23] = 1;printrecord();'>暈眩</a><br><a class='button big1'style='margin-bottom:15px' onclick = 'disease[25] = 1;printrecord();'>咳嗽、咳痰</a><br><a class='button big1'style='margin-bottom:15px' onclick = 'disease[26] = 1;printrecord();'>聲音嘶啞</a><br><a class='button big1'style='margin-bottom:15px' onclick = 'disease[27] = 1;printrecord();'>頭痛</a><br><a class='button big1'style='margin-bottom:15px' onclick = 'disease[28] = 1;printrecord();'>耳鳴</a><br><a class='button big1'style='margin-bottom:15px' onclick = 'disease[32] = 1;printrecord();'>噁心</a><br><a class='button big1'style='margin-bottom:15px' onclick = 'disease[34] = 1;printrecord();'>昏迷</a><br><a class='button big1'style='margin-bottom:15px' onclick = 'disease[36] = 1;printrecord();'>呼吸困難</a><br><a class='button big1'style='margin-bottom:15px' onclick = 'disease[41] = 1;printrecord();'>嗜睡</a><br><a class='button big1'style='margin-bottom:15px' onclick = 'disease[42] = 1;printrecord();'>瞼黃疣</a>";
+			printrecord();
+		}
+		
+		function printright()
+		{
+			 document.getElementById("word").innerHTML = "<a class='button big1'style='margin-bottom:20px' onclick = 'disease[5] = 1;printrecord();'>皮膚癢</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[6] = 1;printrecord();'>蕁麻疹</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[7] = 1;printrecord();'>失眠</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[8] = 1;printrecord();'>注意下降</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[9] = 1;printrecord();'>疲倦無力</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[10] = 1;printrecord();'>情緒長期低落</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[14] = 1;printrecord();'>體重下降</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[15] = 1;printrecord();'>身高縮短</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[22] = 1;printrecord();'>偏側麻癱</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[33] = 1;printrecord();'>抽搐</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[37] = 1;printrecord();'>無法平臥</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[45] = 1;printrecord();'>產生黑斑</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[0] = 1;printrecord();'>冒冷汗</a>";
+			 printrecord();
+		}
+		
+		function printneck()
+		{
+			document.getElementById("word").innerHTML = "<a class='button big1'style='margin-bottom:20px' onclick = 'disease[29] = 1;printrecord();'>頸部痠痛</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[43] = 1;printrecord();'>喘鳴</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[35] = 1;printrecord();'>咳血</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[5] = 1;printrecord();'>皮膚癢</a>";
+		}
+		
+		function printhand()
+		{
+			document.getElementById("word").innerHTML = "<a class='button big1'style='margin-bottom:20px' onclick = 'disease[13] = 1;printrecord();'>指甲軟化</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[18] = 1;printrecord();'>手臂無力</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[20] = 1;printrecord();'>關節疼痛</a>";
+		}
+		
+		function printleg()
+		{
+			document.getElementById("word").innerHTML = "<a class='button big1'style='margin-bottom:20px' onclick = 'disease[16] = 1;printrecord();'>站立不穩</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[20] = 1;printrecord();'>關節疼痛</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[21] = 1;printrecord();'>關節腫脹</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[39] = 1;printrecord();'>下肢水腫</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[44] = 1;printrecord();'>腿部抽筋</a>";
+
+		}
+		
+		function printfoot()
+		{
+			document.getElementById("word").innerHTML = "<a class='button big1'style='margin-bottom:20px' onclick = 'disease[13] = 1;printrecord();'>指甲軟化</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[16] = 1;printrecord();'>站立不穩</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[20] = 1;printrecord();'>關節疼痛</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[21] = 1;printrecord();'>關節腫脹</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[39] = 1;printrecord();'>下肢水腫</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[44] = 1;printrecord();'>腿部抽筋</a>";
+
+		}
+		
+		function printchest()
+		{
+			document.getElementById("word").innerHTML = "<a class='button big1'style='margin-bottom:20px' onclick = 'disease[43] = 1;printrecord();'>心絞痛</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[40] = 1;printrecord();'>胸痛</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[31] = 1;printrecord();'>胸緊迫感/胸悶</a><br><a class='button big1'style='margin-bottom:20px' onclick = 'disease[24] = 1;printrecord();'>心悸</a>";
+		}
+		
+		function printbelly()
+		{
+			document.getElementById("word").innerHTML = "<a class='button big1'style='margin-bottom:20px;' onclick = 'disease[30] = 1; printrecord();'>胸腹肌肉疼痛</a>";
+			
+		}
+		
+		
+		function lookfor()
+		{   <!-- 過敏 -->
+			document.getElementById("word").innerHTML = " ";
+			if(disease[1] == 1 || disease[2] == 1 || disease[3] == 1 || disease[4] == 1 || disease[5] == 1 || disease[6] == 1 || disease[7] == 1 || disease[8] == 1 || disease[9] == 1 || disease[12] == 1 || disease[10] == 1)
+			{
+				document.getElementById("word").innerHTML += "<a class='button big1'style='margin-bottom:40px' href='instructions.html#main13' target='_blank'>過敏</a>" ;
+			}
+			<!-- 骨質疏鬆 -->
+			if(disease[12] == 1 || disease[13] == 1 || disease[14] == 1 || disease[15] == 1 || disease[16] == 1)
+			{
+				document.getElementById("word").innerHTML += "<a class='button big1'style='margin-bottom:40px'href='instructions.html#main12' target='_blank'>骨質疏鬆</a>" ;
+			}
+			<!-- 中風 -->
+			if(disease[11] == 1 || disease[17] == 1 || disease[18] == 1 || disease[19] == 1)
+			{
+				document.getElementById("word").innerHTML += "<a class='button big1'style='margin-bottom:40px'href='instructions.html#main2' target='_blank'>中風</a>" ;
+			}
+			<!-- 關節炎 -->
+			if(disease[20] == 1 || disease[21] == 1 || disease[22] == 1)
+			{
+				document.getElementById("word").innerHTML += "<a class='button big1'style='margin-bottom:40px'href='instructions.html#main11' target='_blank'>關節炎</a>" ;
+			}
+			<!-- 痛風 -->
+			if(disease[20] == 1 || disease[21] == 1)
+			{
+				document.getElementById("word").innerHTML += "<a class='button big1'style='margin-bottom:40px'href='instructions.html#main10' target='_blank'>痛風</a>" ;
+			}
+			<!-- 高血壓 -->
+			if(disease[7] == 1 || disease[9] == 1 || disease[23] == 1 || disease[24] == 1 || disease[27] == 1 || disease[28] == 1 || disease[29] == 1 || disease[32] == 1 || disease[33] == 1 || disease[34] == 1)
+			{
+				document.getElementById("word").innerHTML += "<a class='button big1'style='margin-bottom:40px'href='instructions.html#main3' target='_blank'>高血壓</a>" ;
+			}
+			<!-- 支氣管炎 -->
+			if(disease[3] == 1 || disease[25] == 1 || disease[26] == 1 || disease[30] == 1 || disease[32] == 1 || disease[35] == 1 || disease[36] == 1)
+			{
+				document.getElementById("word").innerHTML += "<a class='button big1'style='margin-bottom:40px'href='instructions.html#main9' target='_blank'>支氣管炎</a>" ;
+			}
+			<!-- 氣喘 -->
+			if(disease[25] == 1 || disease[31] == 1 || disease[35] == 1 || disease[36] == 1)
+			{
+				document.getElementById("word").innerHTML += "<a class='button big1'style='margin-bottom:40px'href='instructions.html#main8' target='_blank'>氣喘</a>" ;
+			}
+			<!-- 高血脂症 -->
+			if(disease[19] == 1 || disease[41] == 1 || disease[42] == 1 || disease[44] == 1 || disease[45] == 1)
+			{
+				document.getElementById("word").innerHTML += "<a class='button big1'style='margin-bottom:40px'href='instructions.html#main4' target='_blank'>高血脂症</a>" ;
+			}
+			<!-- 心律不整 -->
+			if(disease[9] == 1 || disease[23] == 1 || disease[24] == 1 || disease[31] == 1 || disease[34] == 1 || disease[36] == 1)
+			{
+				document.getElementById("word").innerHTML += "<a class='button big1'style='margin-bottom:40px'href='instructions.html#main5' target='_blank'>心律不整</a>" ;
+			}
+			<!-- 瓣膜性心臟病 -->
+			if(disease[9] == 1 || disease[18] == 1 || disease[25] == 1 || disease[37] == 1 || disease[38] == 1 || disease[39] == 1 || disease[40] == 1)
+			{
+				document.getElementById("word").innerHTML += "<a class='button big1'style='margin-bottom:40px'href='instructions.html#main7' target='_blank'>瓣膜性心臟病</a>" ;
+			}
+			<!-- 冠心症 -->
+			if(disease[23] == 1 || disease[31] == 1 || disease[40] == 1 || disease[43] == 1 || disease[0] == 1)
+			{
+				document.getElementById("word").innerHTML += "<a class='button big1'style='margin-bottom:40px'href='instructions.html#main6' target='_blank'>冠心症</a>" ;
+			}
+		}
+		
+		function printrecord()
+		{
+			document.getElementById("record").innerHTML = " ";
+			var i;
+			
+			for(i=0;i<46;i++)
+			{
+				if(disease[i] == 1)
+				{
+					if(test[i] != 1)
+					{
+						document.getElementById("record").innerHTML += "<a class='button big2' style='margin-bottom:10px;align:center;' onclick = 'deleterecord();'>"+diseasechi[i]+"</a><br>";
+					}
+				}
+			}
+		}
+		/*function deleterecord()
+		{
+			document.getElementById("record").innerHTML = " ";
+			var i;
+			for(i=0;i<46;i++)
+			{
+				if(disease[i] == 1)
+				{
+					if(test[i] != 1)
+					{	
+						document.getElementById("record").innerHTML += "<li style='margin-bottom:10px; align:left;'><a onclick = 'disease[i] = 0; test[i] = 0;deleterecord();'>"+diseasechi[i]+"</a></li>";	
+					}
+				}
+			}
+		}*/
+		
+		
+		</script>
+		<noscript></noscript>
+	</head>
+	<body>
+			
+
+			
+			
+		<!-- Header -->
+			<header id="header">
+				<h1><a href="homepage.html">Interphase</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="homepage.html" target="_blank">台灣醫療大作戰</a></li>   <!-- 開新的一個視窗---->
+						<li><a href="searchsick.html" target="_blank">查詢病狀</a></li>
+						<li><a href="instructions.html" target="_blank">台灣民眾常見慢性病之自體分析</a></li>    
+					</ul>
+				</nav>
+			</header>
+
+			
+
+		<!-- Main -->
+		
+				
+			
+		
+			<section id="bann" class="wrapper">
+				<div class="container">
+					<header class="major">
+						<h2>查詢病狀</h2>
+						<p>請點擊下方人體圖來選擇不舒服之部位</p>
+						
+					</header>
+			<header class="major1" style="background-color:rgb(255,255,255,0.5);">
+<map id = "pic" name="image-map">	<!-- -->
+   <!--頭 --> <area id="pic1" target="" alt="" title=""  onclick="printhead()" coords="369,169,362,166,355,152,360,137,362,104,374,78,404,65,431,68,452,77,462,99,466,121,466,138,471,148,465,158,458,175,452,198,445,212,433,219,414,226,392,221,373,198" shape="poly">
+  <!--肩膀 -->  <area id="pic2"target="" alt="" title="" onclick="printneck()" coords="378,214,364,231,342,240,318,253,349,255,380,255,398,255,408,255,410,232,393,224" shape="poly">
+   <!-- 右身體--> <area id="pic3"target="" alt="" title=""  onclick="printright()" coords="450,212,441,220,431,227,416,230,414,699,456,933,453,1022,462,1060,463,1093,456,1145,454,1207,453,1236,478,1250,515,1227,497,1143,505,1097,527,1010,520,916,526,709,508,561,528,423,545,473,552,535,589,640,580,683,582,729,579,744,597,746,622,720,629,698,622,614,610,497,570,286,551,265,513,254" shape="poly">
+   <!--左胸 --> <area id="pic4"target="" alt="" title=""  onclick="printchest()" coords="309,258,298,260,306,275,311,298,314,322,311,350,309,373,307,394,300,422,313,476,410,476,409,260" shape="poly">
+   <!--左腹 --> <area id="pic5"target="" alt="" title=""  onclick="printbelly()" coords="311,481,322,538,307,692,332,674,349,666,365,665,374,670,387,675,398,685,405,695,409,703,409,481" shape="poly">
+    <!--左腿 --><area id="pic6"target="" alt="" title=""  onclick="printleg()" coords="308,700,308,822,314,876,305,954,333,944,353,945,364,953,373,961,384,905,389,865,401,780,407,720,409,709,398,694,386,681,371,674,353,672,337,675,322,685" shape="poly">
+   <!--左腳 --> <area id="pic7"target="" alt="" title=""  onclick="printfoot()" coords="305,965,304,1026,317,1079,326,1119,329,1141,328,1165,326,1180,325,1198,314,1228,318,1239,343,1247,365,1250,374,1237,373,1207,377,1172,363,1102,368,1063,375,1027,374,968,360,953,340,948,327,951,314,955" shape="poly">
+   <!--左手 --> <area id="pic8" target="" alt="" title="" onclick="printhand()"  coords="292,262,268,274,254,292,249,320,248,358,242,385,237,419,226,450,217,489,212,532,207,580,205,645,197,705,208,732,230,746,242,747,241,733,245,715,240,667,237,635,258,591,281,482,293,437,300,411,305,375,309,340,310,311,301,274" shape="poly">
+</map>					
+						<a class="image left" style=" margin-left:-100px;"><img src="images/all.png" usemap="#image-map"></a>
+							<ul1 style=" margin-top:-200px;margin-left:-250px;cursor: pointer;"id = "word"></ul1>
+							<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+						
+					
+						<a class = "button big" style= "position:absolute; top:550px; right:20px;" href="#pic"; onclick = "lookfor();">診斷結果</a>
+						
+						
+						
+						
+						<x id = "record" style= "width: 12%; height: 800px; overflow-x: hidden;overflow-y: scroll; cursor: pointer; position:absolute; top:650px; right:13px; align:left;"></x>
+						</header>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<div class="row">
+						<section class="4u 6u(medium) 12u$(small)">
+							<h3>蘇栢誼</h3>
+							<p>資工2B</p>
+							<p>學號:00557124</p>
+							<ul class="icons">
+								<li><a href="https://www.facebook.com/profile.php?id=100003117683092" class="icon rounded fa-facebook"  target="_blank"><span class="label">Facebook</span></a></li>
+							</ul>
+						</section>
+						
+						<section class="4u 6u$(medium) 12u$(small)">
+							<h3>趙宇瑄</h3>
+							<p>資工2B</p>
+							<p>學號:00557148</p>
+							<ul class="icons">
+								<li><a href="https://www.facebook.com/yuhsiun.choa" class="icon rounded fa-facebook"  target="_blank"><span class="label">Facebook</span></a></li>
+							</ul>
+						</section>
+						
+						<section class="4u$ 12u$(medium) 12u$(small)">
+							<h3>聯絡我們</h3>
+							<ul class="tabular">
+								<li>
+									<h3>address</h3>
+									<a href="https://www.google.com.tw/maps/place/%E5%9C%8B%E7%AB%8B%E5%8F%B0%E7%81%A3%E6%B5%B7%E6%B4%8B%E5%A4%A7%E5%AD%B8%E9%9B%BB%E6%A9%9F%E5%B7%A5%E7%A8%8B%E5%AD%B8%E7%B3%BB/@25.1507169,121.7722264,16z/data=!4m8!1m2!2m1!1z5rW35rSL5aSn5a246Zu76LOH57O76aSo!3m4!1s0x345d4f0ec8c16b89:0xb1344fe19b8e067!8m2!3d25.1505787!4d121.7805212"  target="_blank">基隆市海洋大學資工系
+									
+								</li>
+								<li>
+									<h3>mail</h3>
+									<a href="mailto:thomas205327@yahoo.com.tw"  target="_blank">thomas205327@yahoo.com.tw</a>
+									<a href="mailto:arthur870704@gmail.com" target="_blank">arthur870704@gmail.com</a>
+								</li>
+								<li>
+									<h3>phone</h3>
+									0978716315<br>
+									0909992602
+								</li>
+							</ul>
+						</section>
+					</div>
+					<ul class="copyright">
+						<li>&copy; 網頁期末專題</li>
+						<li>Design:<a href="https://www.facebook.com/profile.php?id=100003117683092"target="_blank">暴風</a>、<a href="https://www.facebook.com/yuhsiun.choa"target="_blank">我還會是眨眨嗎</a></li>
+						<li>Images: <a href="https://www.google.com.tw/"target="_blank">Google</a></li>
+					</ul>
+				</div>
+			</footer>
+	</body>
+</html>

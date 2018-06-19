@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>網頁期末專題-台灣醫療大作戰</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		
+		<script src="js/jquery.min.js"></script>                    
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>               <!-- 左上方的-->
+		<script src="js/init.js"></script>
+		<script>
+		$(function(){
+        $('#bu').click(function(){
+        $('html,body').animate({scrollTop:$('#one').offset().top},800);});
+		});
+		</script>
+		<noscript>																<!-- -->
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+	</head>
+	<body class="landing">
+
+		<!-- Header -->   
+			<header id="header">                               
+				<h1><a href="homepage.html" >Interphase</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="homepage.html" target="_blank">台灣醫療大作戰</a></li>   <!-- 開新的一個視窗---->
+						<li><a href="searchsick.html" target="_blank">查詢病狀</a></li>
+						<li><a href="instructions.html" target="_blank">台灣民眾常見慢性病之自體分析</a></li>    
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Banner -->                         <!-- 第一個畫面 -->   
+			<section id="banner">
+				<h2>台灣醫療大作戰</h2>
+				<p>大學生的10病狀</p>
+				<ul class="actions">
+					<li>
+						<a  id="bu"class="button big">Learn More</a>
+					</li>
+				</ul>
+			</section>
+
+		<!-- One -->                                                <!-- 第二個畫面       第一個小圈(小人身體不舒服)   第二個小圈(使用網站)   第三個小圈(得知大概病狀  就醫是否)-->  
+			<section id="one" class="wrapper style1 align-center">
+				<div class="container">
+					<header>
+						<h2>網站使用3步驟</h2>
+						<p>教你如何上手台灣醫療大作戰</p>
+					</header>
+					<div class="row 200%">
+						<section class="4u 12u$(small)">
+							<i class="icon big rounded"><img style="margin-top:20px"src="images/sick.png"></i>    <!-- 用圖片-->
+							<p>身體不適</p>
+							<p>當今天身體感到不適，卻只知道小小症狀</p>
+						</section>
+						<section class="4u 12u$(small)">
+							<i class="icon big rounded"><img style="margin-top:20px"src="images/computer.png"></i>
+							<p>使用網站</p>
+							<p>使用台灣醫療大作戰<br>點擊人體圖選擇您的症狀</p>
+						</section>
+						<section class="4u$ 12u$(small)">
+							<i class="icon big rounded"><img style="margin-top:20px"src="images/idea.png"></i>
+							<p>得知大概病狀</p>
+							<p>得知您可能將要患上的疾病，並介紹該病情的症狀、預防和保養</p>
+						</section>
+					</div>
+				</div>
+				<ul class="actions">
+					<li>
+						<a href="searchsick.html" target="_blank" class="button big">立即使用</a>
+					</li>
+				</ul>
+			</section>
+			
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<div class="row">
+						<section class="4u 6u(medium) 12u$(small)">
+							<h3>蘇栢誼</h3>
+							<p>資工2B</p>
+							<p>學號:00557124</p>
+							<ul class="icons">
+								<li><a href="https://www.facebook.com/profile.php?id=100003117683092" class="icon rounded fa-facebook"  target="_blank"><span class="label">Facebook</span></a></li>
+							</ul>
+						</section>
+						
+						<section class="4u 6u$(medium) 12u$(small)">
+							<h3>趙宇瑄</h3>
+							<p>資工2B</p>
+							<p>學號:00557148</p>
+							<ul class="icons">
+								<li><a href="https://www.facebook.com/yuhsiun.choa" class="icon rounded fa-facebook"  target="_blank"><span class="label">Facebook</span></a></li>
+							</ul>
+						</section>
+						
+						<section class="4u$ 12u$(medium) 12u$(small)">
+							<h3>聯絡我們</h3>
+							<ul class="tabular">
+								<li>
+									<h3>address</h3>
+									<a href="https://www.google.com.tw/maps/place/%E5%9C%8B%E7%AB%8B%E5%8F%B0%E7%81%A3%E6%B5%B7%E6%B4%8B%E5%A4%A7%E5%AD%B8%E9%9B%BB%E6%A9%9F%E5%B7%A5%E7%A8%8B%E5%AD%B8%E7%B3%BB/@25.1507169,121.7722264,16z/data=!4m8!1m2!2m1!1z5rW35rSL5aSn5a246Zu76LOH57O76aSo!3m4!1s0x345d4f0ec8c16b89:0xb1344fe19b8e067!8m2!3d25.1505787!4d121.7805212"  target="_blank">基隆市海洋大學資工系
+									
+								</li>
+								<li>
+									<h3>mail</h3>
+									<a href="mailto:thomas205327@yahoo.com.tw"  target="_blank">thomas205327@yahoo.com.tw</a>
+									<a href="mailto:arthur870704@gmail.com" target="_blank">arthur870704@gmail.com</a>
+								</li>
+								<li>
+									<h3>phone</h3>
+									0978716315<br>
+									0909992602
+								</li>
+							</ul>
+						</section>
+					</div>
+					<ul class="copyright">
+						<li>&copy; 網頁期末專題</li>
+						<li>Design:<a href="https://www.facebook.com/profile.php?id=100003117683092"target="_blank">暴風</a>、<a href="https://www.facebook.com/yuhsiun.choa"target="_blank">我還會是眨眨嗎</a></li>
+						<li>Images: <a href="https://www.google.com.tw/"target="_blank">Google</a></li>
+					</ul>
+				</div>
+			</footer>
+
+	</body>
+</html>
