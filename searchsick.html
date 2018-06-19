@@ -154,6 +154,12 @@
 			{
 				document.getElementById("word").innerHTML += "<a class='button big1'style='margin-bottom:40px'href='instructions.html#main6' target='_blank'>冠心症</a>" ;
 			}
+			document.getElementById("record").innerHTML = " ";
+			var i;
+			for(i=0;i<46;i++)
+			{
+				disease[i] = 0;
+			}
 		}
 		
 		function printrecord()
@@ -167,26 +173,20 @@
 				{
 					if(test[i] != 1)
 					{
-						document.getElementById("record").innerHTML += "<a class='button big2' style='margin-bottom:10px;align:center;' onclick = 'deleterecord();'>"+diseasechi[i]+"</a><br>";
+						document.getElementById("record").innerHTML += "<a class='button big2' style='margin-bottom:10px;align:center;'>"+diseasechi[i]+"</a><br>";
 					}
 				}
 			}
 		}
-		/*function deleterecord()
+		function deleteall()
 		{
 			document.getElementById("record").innerHTML = " ";
 			var i;
 			for(i=0;i<46;i++)
 			{
-				if(disease[i] == 1)
-				{
-					if(test[i] != 1)
-					{	
-						document.getElementById("record").innerHTML += "<li style='margin-bottom:10px; align:left;'><a onclick = 'disease[i] = 0; test[i] = 0;deleterecord();'>"+diseasechi[i]+"</a></li>";	
-					}
-				}
+				disease[i] = 0;
 			}
-		}*/
+		}
 		
 		
 		</script>
@@ -244,7 +244,9 @@
 						
 						
 						
-						<x id = "record" style= "width: 12%; height: 800px; overflow-x: hidden;overflow-y: scroll; cursor: pointer; position:absolute; top:650px; right:13px; align:left;"></x>
+						<x id = "record" style= "width: 12%; height: 600px; overflow-x: hidden;overflow-y: scroll; cursor: pointer; position:absolute; top:650px; right:13px; align:left;"></x>
+						<a class = "button big" style= "position:absolute; top:1275px; right:20px;" href="#pic"; onclick = "deleteall();">移除選項</a>
+						
 						</header>
 				</div>
 			</section>

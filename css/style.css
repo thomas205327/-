@@ -16,7 +16,7 @@
 
 	body, input, select, textarea {
 		color: #444;
-		font-family: "Lato", Helvetica, sans-serif;
+		font-family:Microsoft JhengHei;
 		font-size: 15pt;
 		font-weight: 300;
 		line-height: 1.65em;
@@ -24,7 +24,7 @@
 
 	a {
 		color: #4dac71;
-		text-decoration: underline;
+		text-decoration: none;
 	}
 
 		a:hover {
@@ -120,7 +120,7 @@
 
 	pre {
 		-webkit-overflow-scrolling: touch;
-		font-family: "Courier New", monospace;
+		font-family: Microsoft JhengHei;
 		font-size: 0.9em;
 		margin: 0 0 2em 0;
 	}
@@ -267,7 +267,7 @@
 			content: "";
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
-			font-family: FontAwesome;
+			font-family: Microsoft JhengHei;
 			font-style: normal;
 			font-weight: normal;
 			text-transform: none !important;
@@ -333,7 +333,7 @@
 			input[type="radio"] + label:before {
 				-moz-osx-font-smoothing: grayscale;
 				-webkit-font-smoothing: antialiased;
-				font-family: FontAwesome;
+				font-family: Microsoft JhengHei;
 				font-style: normal;
 				font-weight: normal;
 				text-transform: none !important;
@@ -434,7 +434,7 @@
 		.icon:before {
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
-			font-family: FontAwesome;
+			font-family: Microsoft JhengHei;
 			font-style: normal;
 			font-weight: normal;
 			text-transform: none !important;
@@ -822,7 +822,7 @@
 		}
 		
 		.button.big1 {
-			font-size: 1em;
+			font-size: 20px;
 			width:700px;
 			color:#000000;
 		}
@@ -1268,7 +1268,7 @@ a1 {
 	
 x { background-color: rgb(255,255,255,0);
              margin-bottom: .5em;
-             font-family: arial, helvetica, sans-serif; 
+             font-family: Microsoft JhengHei; 
 			 
 			 }
 	
